@@ -13,3 +13,5 @@ sr-sl: serve slice - servis sječena
 sr-fl: serve flat - servis ravna
 
 unk: unknown - nepoznat
+
+LINK: https://drive.google.com/open?id=19ILiHyw5dIl7nUWxJQAAqTCwr1XT8tsc
