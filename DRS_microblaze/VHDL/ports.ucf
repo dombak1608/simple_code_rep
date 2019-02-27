@@ -1,0 +1,16 @@
+NET number_in<3> LOC=T10;
+NET number_in<2> LOC=T9;
+NET number_in<1> LOC=V9;
+NET number_in<0> LOC=M8;
+NET segment_out<7> LOC=T17;
+NET segment_out<6> LOC=T18;
+NET segment_out<5> LOC=U17;
+NET segment_out<4> LOC=U18;
+NET segment_out<3> LOC=M14;
+NET segment_out<2> LOC=N14;
+NET segment_out<1> LOC=L14;
+NET segment_out<0> LOC=M13;
+NET display_out<3> LOC=N16;
+NET display_out<2> LOC=N15;
+NET display_out<1> LOC=P18;
+NET display_out<0> LOC=P17;
