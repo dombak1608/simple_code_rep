@@ -28,22 +28,22 @@ float r1[3];  //valueInSecondVibration
 long tempValue;
 float temperature;
 
-int piezo[preH+aftH]; //piezo value
-int piezoH[3];  //threeHighestVibration
-int piezoHindex[3]; //indexOfHighestVibration
+byte piezo[preH+aftH]; //piezo value
+byte piezoH[3];  //threeHighestVibration
+byte piezoHindex[3]; //indexOfHighestVibration
 
 const int piezoPin = A0;
 const int piezoThreshold = 15;
 
 int countStrokes;
-int indexOfFirst; //indexOfFirstVibration
+byte indexOfFirst; //indexOfFirstVibration
 bool hitVibration;
 String outputStroke;
 
 void setup()
 {
-  //Serial.begin(115200);
-  //Serial.println("PC connected");
+  Serial.begin(115200);
+  Serial.println("PC connected");
   
   #if FASTADC //adc_prescale: 8, 316 page 32U4 datasheet
     cbi(ADCSRA,ADPS2);  //0
@@ -76,10 +76,13 @@ void loop()
     
     countStrokes++;
     printRawBLE();
-	analyzeHit();
+    analyzeHit();
 
     bleSerial.println(outputStroke);
     bleSerial.println();
+
+    Serial.println(outputStroke);
+    Serial.println();
     
     if (countStrokes%10 == 0)
       getTemperature();
@@ -356,7 +359,7 @@ void analyzeHit()
       outputStroke += "vl-bk, ";
   }
   if (outputStroke.length() < 7)
-    outputStroke+= "unk"; //unknown
+    outputStroke += "unk"; //unknown
   else
     outputStroke.remove(outputStroke.length()-2);
 }
