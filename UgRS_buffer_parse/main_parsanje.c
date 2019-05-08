@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdint.h>
 
 //varijable
 #define brCasa 6
